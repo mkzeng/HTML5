@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            width: 600px;
+            height: 500px;
+            background-color: pink;
+            /* 子元素是跟着主轴排序 */
+            flex-direction: column;
+            justify-content: flex-end;
+            /* 默认不换行 nowrap*/
+            /* flex-wrap: wrap; */
+            align-items: center;
+        }
+        
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: powderblue;
+        }
+        
+        div span:nth-child(2) {
+            /* 默认是0 -1比0小所以在前面 */
+            order: -1;
+        }
+        
+        div span:nth-child(3) {
+            align-self: flex-end;
+            order: -5;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <!-- <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+        <span>10</span> -->
+    </div>
+</body>
+
+</html>
